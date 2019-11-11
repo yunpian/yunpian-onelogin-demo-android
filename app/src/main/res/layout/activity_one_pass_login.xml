@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qp_white_color"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/qp_white_color"
+        app:navigationIcon="@drawable/qp_ic_arrow_back" />
+
+    <ImageView
+        android:layout_width="57.6dp"
+        android:layout_height="43.2dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ic_qp_logo"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="48dp"
+        android:text="本机校验"
+        android:textColor="@color/qp_text_active_color"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/phone_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/qp_edit_bg"
+        android:gravity="center"
+        android:hint="@string/qp_hint_input_phone"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" />
+
+    <Button
+        android:id="@+id/one_pass_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/qp_confirm_in_active_bg"
+        android:enabled="false"
+        android:gravity="center"
+        android:onClick="checkOnePass"
+        android:text="本机校验"
+        android:textColor="@color/qp_white_color"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="12sp"
+        android:textColor="@color/summary"
+        android:text="使用本机号码校验，即代表您已同意授权云片通过中国三大运营商为您提供本机号码校验服务" />
+
+    <TextView
+        android:id="@+id/version_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_margin="16dp"
+        android:textSize="12sp"
+        android:textColor="@color/summary"
+        android:text="云片移动认证产品体验" />
+
+</LinearLayout>
