@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='yunpian-onelogin-sdk-android'
+rootProject.name='yunpian-onelogin-demo-android'

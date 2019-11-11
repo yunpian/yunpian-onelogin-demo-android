@@ -288,7 +288,7 @@ public class ActivityAuthStyleChoose extends AppCompatActivity {
             public void onPrivacyClick(String name, String url) {
                 Log.d("qipeng_log", "onPrivacyClick");
             }
-        }); // 极验
+        });
     }
 
     private void smsLogin() {
