@@ -429,6 +429,6 @@ QPOneLogin.getInstance().addOneLoginRegisterViewConfig(id, authRegisterViewConfi
 
 #### 一键登录
 
-![](../image/onelogin.png)
+![](https://github.com/yunpian/yunpian-onelogin-demo-android/blob/master/image/onelogin.jpeg)
 ### 短信验证
-![](../image/sms.png)
+![](https://github.com/yunpian/yunpian-onelogin-demo-android/blob/master/image/sms.jpeg)
