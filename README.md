@@ -429,6 +429,6 @@ QPOneLogin.getInstance().addOneLoginRegisterViewConfig(id, authRegisterViewConfi
 
 #### 一键登录
 
-![](https://s3-qcloud.meiqiausercontent.com/pics.meiqia.bucket/3994/-/e0b10428ae34c6403436522af5b7fe13.jpg)
+![](../image/onelogin.png)
 ### 短信验证
-![](https://s3-qcloud.meiqiausercontent.com/pics.meiqia.bucket/3994/-/2d383be79116dcb64cf913e9398e0966.jpg)
+![](../image/sms.png)
