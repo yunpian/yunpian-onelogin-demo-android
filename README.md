@@ -28,14 +28,18 @@
 
 开发者服务端从客户端请求解析到相关参数后，接口能正确返回校验结果，即代表集成成功。
 
-#### 远程依赖集成
+## 开始使用
+
+### 集成
+
+#### 方式一：远程依赖集成 (推荐)
 需要确保主项目 build.gradle 文件中声明了 jcenter() 配置
 
 ```
 implementation 'com.yunpian:onelogin:1.0.4'
 ```
 
-#### 手动导入 SDK
+#### 方式二：手动导入 SDK
 
 将获取的 sdk 中的 aar 文件放到工程中的libs文件夹下，然后在 app 的 build.gradle 文件中增加如下代码
 
@@ -51,10 +55,9 @@ repositories {
 
 ```java
 // aar 名称和版本号以下载下来的最新版为准
-implementation(name: 'qipeng-onelogin-v1.0.3', ext: 'aar')
+implementation(name: 'qipeng-onelogin-v1.0.4', ext: 'aar')
 ```
 
-## 开始使用
 
 #### 初始化
 
