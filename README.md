@@ -28,6 +28,13 @@
 
 开发者服务端从客户端请求解析到相关参数后，接口能正确返回校验结果，即代表集成成功。
 
+### 远程依赖集成
+需要确保主项目 build.gradle 文件中声明了 jcenter() 配置
+
+```
+implementation 'com.yunpian:onelogin:1.0.4'
+```
+
 #### 手动导入 SDK
 
 将获取的 sdk 中的 aar 文件放到工程中的libs文件夹下，然后在 app 的 build.gradle 文件中增加如下代码
