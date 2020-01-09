@@ -28,6 +28,8 @@
 
 开发者服务端从客户端请求解析到相关参数后，接口能正确返回校验结果，即代表集成成功。
 
+[云片移动认证服务端接入文档](https://github.com/yunpian/yunpian-onelogin-demo-android/blob/master/云片移动认证服务端接入文档.md)
+
 ## 开始使用
 
 ### 集成
