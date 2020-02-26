@@ -38,7 +38,7 @@
 需要确保主项目 build.gradle 文件中声明了 jcenter() 配置
 
 ```
-implementation 'com.yunpian:onelogin:1.0.4'
+implementation 'com.yunpian:onelogin:1.0.5'
 ```
 
 #### 方式二：手动导入 SDK
@@ -57,7 +57,7 @@ repositories {
 
 ```java
 // aar 名称和版本号以下载下来的最新版为准
-implementation(name: 'qipeng-onelogin-v1.0.4', ext: 'aar')
+implementation(name: 'qipeng-onelogin-v1.0.5', ext: 'aar')
 ```
 
 
