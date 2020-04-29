@@ -19,20 +19,6 @@
         <activity android:name=".ActivityAuthStyleChoose" />
         <activity android:name=".ActivityAuthResult"/>
 
-        <!-- oneLogin -->
-        <activity
-            android:name="com.geetest.onelogin.activity.OneLoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.ActivityDialogStyle"
-            android:screenOrientation="behind" />
-        <activity
-            android:name="com.geetest.onelogin.activity.OneLoginWebActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/Theme.ActivityDialogStyle"
-            android:launchMode="singleTop"
-            android:screenOrientation="behind" />
-
     </application>
 
 </manifest>

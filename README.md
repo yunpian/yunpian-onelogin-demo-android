@@ -34,32 +34,11 @@
 
 ### 集成
 
-#### 方式一：远程依赖集成 (推荐)
 需要确保主项目 build.gradle 文件中声明了 jcenter() 配置
 
 ```
-implementation 'com.yunpian:onelogin:1.0.5'
+implementation 'com.yunpian:onelogin:2.0.1.6'
 ```
-
-#### 方式二：手动导入 SDK
-
-将获取的 sdk 中的 aar 文件放到工程中的libs文件夹下，然后在 app 的 build.gradle 文件中增加如下代码
-
-```java
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
-```
-
-在 dependencies 依赖中增加对 aar 包的引用
-
-```java
-// aar 名称和版本号以下载下来的最新版为准
-implementation(name: 'qipeng-onelogin-v1.0.5', ext: 'aar')
-```
-
 
 #### 初始化
 
@@ -67,19 +46,6 @@ implementation(name: 'qipeng-onelogin-v1.0.5', ext: 'aar')
 
 ```java
 QPOneLogin.getInstance().init(context, "your appId", callback);
-```
-
-#### 权限获取
-
-预取号和取号之前必须先授予相关权限
-
-```java
-int readPhonePermissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
-int accessFineLocationCheck = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-if (readPhonePermissionCheck != PackageManager.PERMISSION_GRANTED
-        || accessFineLocationCheck != PackageManager.PERMISSION_GRANTED) {
-    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-}
 ```
 
 #### 预取号
@@ -414,8 +380,8 @@ QPOneLogin.getInstance().addOneLoginRegisterViewConfig(id, authRegisterViewConfi
 | -3     | 初始化失败
 | -20101 | app_id 未传
 | -20102 | 当前上下文未传
-| -20103 | 授权页面未配置
-| -20104 | 没有预取号就进行取号
+| -20105 | 预取号超时或者拉起授权页超时
+| -20106 | 取号时更换了 SIM 卡
 | -20200 | 当前网络不可用
 | -20201 | 当前手机没有电话卡
 | -20202 | 当前没有开启流量
@@ -426,7 +392,9 @@ QPOneLogin.getInstance().addOneLoginRegisterViewConfig(id, authRegisterViewConfi
 | -20301 | 退出取号页面
 | -20302 | 按返回键退出取号页面
 | -20303 | 切换账号登陆方式
-| -20304 | 授权页面加载异常
+| -20501 | 当前上下文未传
+| -20502 | 授权页未配置
+| -20503 | 授权页面加载异常
 | -40101 | 移动运营商预取号失败
 | -40102 | 移动运营商取号失败
 | -40201 | 联通运营商预取号失败
@@ -435,7 +403,6 @@ QPOneLogin.getInstance().addOneLoginRegisterViewConfig(id, authRegisterViewConfi
 | -40302 | 电信运营商取号失败
 | -50100 | SDK内部请求pre_get_token接口返回异常
 | -50101 | SDK内部请求pre_get_token接口解密失败
-| -50102 | SDK内部请求pre_get_token接口返回错误
 
 ## 效果演示
 
