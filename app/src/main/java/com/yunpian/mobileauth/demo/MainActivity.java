@@ -1,10 +1,8 @@
 package com.yunpian.mobileauth.demo;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -15,10 +13,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.qipeng.yp.onelogin.QPOneLogin;
 import com.qipeng.yp.onelogin.callback.QPResultCallback;
@@ -37,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         setStatusBarColor();
         setContentView(R.layout.activity_main);
-        requestPermissions();
         initSDK();
 
         oneLoginLl = findViewById(R.id.one_login_ll);
@@ -45,27 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView versionTv = findViewById(R.id.version_tv);
         versionTv.setText(versionTv.getText() + " " + Utils.getVersionName(this, getPackageName()));
-    }
-
-    private void requestPermissions() {
-        int readPhonePermissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
-        int accessFineLocationCheck = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        if (readPhonePermissionCheck != PackageManager.PERMISSION_GRANTED
-                || accessFineLocationCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        for (int grantResult : grantResults) {
-            if (grantResult != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(MainActivity.this, "当前功能需要 电话、位置权限 才能正常工作", Toast.LENGTH_SHORT).show();
-                requestPermissions();
-                return;
-            }
-        }
-        initSDK();
     }
 
     private void initSDK() {
@@ -99,14 +72,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void oneLogin(View view) {
-        int readPhonePermissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
-        int accessFineLocationCheck = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        if (readPhonePermissionCheck != PackageManager.PERMISSION_GRANTED
-                || accessFineLocationCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-            return;
-        }
-
         if (!isNetworkConnected(this)) {
             Toast.makeText(MainActivity.this, "请确保网络连接正常", Toast.LENGTH_SHORT).show();
             return;
