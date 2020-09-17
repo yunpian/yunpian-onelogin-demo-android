@@ -37,7 +37,7 @@
 需要确保主项目 build.gradle 文件中声明了 jcenter() 配置
 
 ```
-implementation 'com.yunpian:onelogin:2.0.2'
+implementation 'com.yunpian:onelogin:2.0.3'
 ```
 
 #### 初始化
